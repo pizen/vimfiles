@@ -18,7 +18,8 @@ Installation
 1. Clone the repo
 2. Get the submodules
 3. Link .vimrc
-    
+
+
     git clone https://github.com/pizen/vimfiles.git ~/.vim
     cd ~/.vim
     git submodule init
