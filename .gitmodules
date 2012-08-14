@@ -10,3 +10,6 @@
 [submodule "bundle/nerdcommenter"]
 	path = bundle/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter.git
+[submodule "colors/molokai"]
+	path = colors/molokai
+	url = https://github.com/tomasr/molokai.git

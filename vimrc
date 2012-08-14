@@ -1,10 +1,10 @@
 " Ian's .vimrc file.  If you're not using VIM, you should be. "
 
+set nocompatible
+
 " Pathogen stuff
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
-
-set nocompatible
 
 " Security
 set modelines=0
@@ -39,7 +39,7 @@ set directory=~/.vim/tmp
 " Color scheme
 syntax on
 set background=dark
-colorscheme molokai
+colorscheme molokai/colors/molokai
 
 " Makefile sanity
 autocmd BufEnter ?akefile* set noet ts=8 sw=8 sts=8
