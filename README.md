@@ -15,17 +15,22 @@ This project keeps my .vim environment consistent across systems.
 Installation
 ------------
 
-Clone the repo:
-`git clone https://github.com/pizen/vimfiles.git ~/.vim`
+1. Clone the repo
+2. Get the submodules
+3. Link .vimrc
 
-Get the submodules:
-`cd ~/.vim && git submodule init && git submodule update`
-
-Make sure vim finds the vimrc file by either symlinking it:
-`ln -s ~/.vim/vimrc ~/.vimrc`
+    git clone https://github.com/pizen/vimfiles.git ~/.vim
+    cd ~/.vim
+    git submodule init
+    git submodule update
+    ln -s ~/.vim/vimrc ~/.vimrc
 
 Command-T
 ---------
 
-Build Command-T:
-`cd ~/.vim/bundle/Command-T/ruby/command-t && ruby extconf.rb && make`
+Command-T doesn't come ready to run from the submodule so one additional
+step is necessary to build it.
+    
+    cd ~/.vim/bundle/Command-T/ruby/command-t
+    ruby extconf.rb
+    make
