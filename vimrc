@@ -17,6 +17,7 @@ set expandtab
 
 " Basic options
 set autoindent
+set smartindent
 set ruler
 set relativenumber
 set nohls
@@ -33,6 +34,22 @@ set backspace=indent,eol,start
 "set encoding=utf-8
 "set visualbell
 
+" Make the status line more useful
+set statusline=                              " clear the statusline for when vimrc is reloaded
+set statusline+=%-3.3n\                      " buffer number
+set statusline+=%f\                          " file name
+set statusline+=%h%m%r%w                     " flags
+set statusline+=[%{strlen(&ft)?&ft:'none'},  " filetype
+set statusline+=%{strlen(&fenc)?&fenc:&enc}, " encoding
+set statusline+=%{&fileformat}]              " file format
+set statusline+=%=                           " right align
+set statusline+=%{synIDattr(synID(line('.'),col('.'),1),'name')}\  " highlight
+set statusline+=%b,0x%-8B\                   " current char
+set statusline+=%l,%c%V\ (%P)        " offset
+
+" Show hidden whitespace characters
+set list listchars=tab:▷⋅,trail:⋅,nbsp:⋅
+
 set backupdir=~/.vim/backup
 set directory=~/.vim/tmp
 
@@ -41,9 +58,25 @@ syntax on
 set background=dark
 colorscheme molokai/colors/molokai
 
+" Mode-specific status line color
+function! InsertStatuslineColor(mode)
+    if a:mode == 'i'
+        hi statusline guifg=#F92672
+    elseif a:mode == 'r'
+        hi statusline guifg=#66D9EF guibg=#080808
+    else
+        hi statusline guifg=#AE81FF
+    endif
+endfunction
+
+autocmd InsertEnter * call InsertStatuslineColor(v:insertmode)
+autocmd InsertLeave * hi statusline guifg=#455354 guibg=fg
+
 " Makefile sanity
 autocmd BufEnter ?akefile* set noet ts=8 sw=8 sts=8
 "autocmd BufEnter */debian/rules set noet ts=8 sw=8
+
+autocmd FileType py set textwidth=79 " PEP-8
 
 "Set up home and end keys"
 map OH 0
