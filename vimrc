@@ -145,3 +145,6 @@ nmap <leader>s<down>   :rightbelow new<CR>
 
 " Save
 noremap <C-s> :w<CR>
+
+" Paste toggling
+set pastetoggle=<leader>p
