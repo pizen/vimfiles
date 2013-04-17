@@ -19,7 +19,6 @@ set expandtab
 set autoindent
 set smartindent
 set ruler
-set relativenumber
 set nohls
 set scrolloff=3
 set showmode
@@ -33,6 +32,13 @@ set backspace=indent,eol,start
 "set backspace=2
 "set encoding=utf-8
 "set visualbell
+
+" Relative numbering only supported in 7.3+
+if v:version >= 703
+    set relativenumber
+else
+    set number
+endif
 
 " Make the status line more useful
 set statusline=                              " clear the statusline for when vimrc is reloaded
