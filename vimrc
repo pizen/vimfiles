@@ -59,6 +59,11 @@ set list listchars=tab:▷⋅,trail:⋅,nbsp:⋅
 set backupdir=~/.vim/backup
 set directory=~/.vim/tmp
 
+" Set the colors if the terminal supports it
+if &term =~? 'mlterm\|xterm'
+    set t_Co=256
+endif
+
 " Color scheme
 syntax on
 set background=dark
