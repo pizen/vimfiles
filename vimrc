@@ -84,8 +84,7 @@ autocmd InsertEnter * call InsertStatuslineColor(v:insertmode)
 autocmd InsertLeave * hi statusline guifg=#455354 guibg=fg
 
 " Makefile sanity
-autocmd BufEnter ?akefile* set noet ts=8 sw=8 sts=8
-"autocmd BufEnter */debian/rules set noet ts=8 sw=8
+autocmd FileType make set noet ts=8 sw=8 sts=8
 
 autocmd FileType py set textwidth=79 " PEP-8
 autocmd FileType c,cpp setlocal tabstop=2 softtabstop=2 shiftwidth=2
