@@ -89,6 +89,7 @@ autocmd FileType make set noet ts=8 sw=8 sts=8
 autocmd FileType py set textwidth=79 " PEP-8
 autocmd FileType markdown set textwidth=79 " Personal preference
 autocmd FileType c,cpp setlocal tabstop=2 softtabstop=2 shiftwidth=2
+autocmd Filetype gitcommit set textwidth=72
 
 if exists('+colorcolumn')
     set colorcolumn=80
