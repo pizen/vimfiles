@@ -165,3 +165,14 @@ noremap <C-s> :w<CR>
 
 " Paste toggling
 set pastetoggle=<leader>p
+
+" Tagbar
+nmap <leader>c :TagbarToggle<CR>
+
+" Airline
+let g:airline#extensions#tabline#enabled = 1
+nnoremap <silent>   <tab> :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bnext<CR>
+nnoremap <silent> <s-tab> :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bprevious<CR>
+
+" Close a buffer without losing the split
+nnoremap <C-c> :bp\|bd #<CR>
