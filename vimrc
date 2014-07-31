@@ -33,6 +33,8 @@ set backspace=indent,eol,start
 "set encoding=utf-8
 "set visualbell
 
+filetype plugin on
+
 " Relative numbering only supported in 7.3+
 if v:version >= 703
     set relativenumber
