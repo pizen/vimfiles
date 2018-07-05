@@ -92,6 +92,7 @@ autocmd FileType py set textwidth=79 " PEP-8
 autocmd FileType markdown set textwidth=79 " Personal preference
 autocmd FileType c,cpp setlocal tabstop=2 softtabstop=2 shiftwidth=2
 autocmd Filetype gitcommit set textwidth=72
+autocmd FileType yaml set ts=2 sw=2 sts=2
 
 if exists('+colorcolumn')
     set colorcolumn=80
